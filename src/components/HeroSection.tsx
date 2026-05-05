@@ -62,7 +62,8 @@ const childVariants = {
                 whileHover={{ scale: 1.05, color: "#4b5563" }}
               >
                 <MapPin className="h-4 w-4 mr-2" />
-                📍 {personalInfo.location}
+                {personalInfo.location}
+                <span>&nbsp;&#128205;</span>
               </motion.div>
 
               <motion.a
@@ -72,7 +73,8 @@ const childVariants = {
                 whileHover={{ scale: 1.05, color: "#4b5563" }}
               >
                 <Mail className="h-4 w-4 mr-2" />
-                ✉️ {personalInfo.email}
+                {personalInfo.email}
+                <span>&nbsp;&#9993;&#65039;</span>
               </motion.a>
 
               <motion.a
@@ -84,7 +86,8 @@ const childVariants = {
                 whileHover={{ scale: 1.05, color: "#4b5563" }}
               >
                 <Github className="h-4 w-4 mr-2" />
-                🌟 GitHub
+                GitHub
+                <span>&nbsp;&#127775;</span>
               </motion.a>
 
               <motion.a
@@ -96,7 +99,8 @@ const childVariants = {
                 whileHover={{ scale: 1.05, color: "#4b5563" }}
               >
                 <Linkedin className="h-4 w-4 mr-2" />
-                🔗 LinkedIn
+                LinkedIn
+                <span>&nbsp;&#128279;</span>
               </motion.a>
             </motion.div>
           </div>

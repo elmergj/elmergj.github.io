@@ -1,10 +1,12 @@
+import profilePic from "../assets/profile.webp"
+
 export const personalInfo = {
   name: "Elmer Gonzalez",
   location: "Panama, Panama City",
   email: "elmegonzalez1120@gmail.com",
   github: "https://github.com/elmergj",
   linkedin: "https://linkedin.com/in/elmer-gonzalez11",
-  profilePicture: "/profile.webp",
+  profilePicture: profilePic.src,
   heroDescription: [
     "Hi, I'm Elmer. I hold a B.S. in Computer Systems and I’m passionate about software development and building scalable enterprise solutions.",
     "As an Information Technology professional, I understand the importance of providing solutions that are not only effective but also accurately" +

@@ -28,7 +28,8 @@ export default function ProjectsSection() {
               viewport={{ once: true }}
             >
             </motion.span>{" "}
-            🚀 Projects
+            <span>&#128640;&nbsp;</span>
+            Projects
           </h2>
         </MotionWrapper>
 
@@ -67,7 +68,8 @@ export default function ProjectsSection() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Github className="h-4 w-4 mr-2 group-hover/link:rotate-12 transition-transform duration-300" />
-                    View on GitHub 🔗
+                    View on GitHub
+                    <span>&nbsp;&#128279;</span>
                   </motion.a>
                 </CardFooter>
               </GlassCard>

@@ -33,9 +33,9 @@ export default function Footer() {
               className="inline-block"
               initial={{ rotate: 0 }}
               whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.5}}
             >
-              💻
+              <span>&nbsp;&#128187;</span>
             </motion.span>{" "}
             and{" "}
             <motion.span
@@ -49,7 +49,7 @@ export default function Footer() {
                 duration: 1.5,
               }}
             >
-              ❤️
+              <span>&nbsp;&#10084;&#65039;</span>
             </motion.span>
           </motion.p>
         </motion.div>
