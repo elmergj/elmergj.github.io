@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+  import { motion, type Variants } from "framer-motion";
 import type { MotionProps } from "framer-motion";
 
 interface MotionWrapperProps extends MotionProps {
@@ -7,8 +7,7 @@ interface MotionWrapperProps extends MotionProps {
   delay?: number;
 }
 
-// Default animations for sections
-const defaultAnimations = {
+const defaultAnimations: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: (delay: number = 0) => ({
     opacity: 1,
@@ -22,10 +21,10 @@ const defaultAnimations = {
 };
 
 export default function MotionWrapper({
-  children,
-  delay = 0,
-  ...props
-}: MotionWrapperProps) {
+    children,
+    delay = 0,
+    ...props
+  }: MotionWrapperProps) {
   return (
     <motion.div
       initial="hidden"

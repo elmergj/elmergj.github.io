@@ -4,27 +4,28 @@ import { motion } from "framer-motion";
 import MotionWrapper from "./MotionWrapper";
 
 export default function HeroSection() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  };
 
-  const childVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-      },
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
     },
-  };
+  },
+};
+
+const childVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
 
   return (
     <section className="py-16 md:py-24 relative overflow-hidden">
@@ -48,7 +49,7 @@ export default function HeroSection() {
               className="text-xl text-muted-foreground mb-6"
               variants={childVariants}
             >
-              Software Engineer 👨‍💻
+              Computer Systems
             </motion.p>
 
             <motion.div
@@ -107,23 +108,35 @@ export default function HeroSection() {
             whileTap={{ scale: 0.95 }}
           >
             <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+              <div className="absolute -inset-1 bg-linear-to-r from-pink-500 to-purple-500 rounded-full blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
               <img
                 src={personalInfo.profilePicture}
                 alt="Profile"
-                className="w-48 md:w-60 rounded-full relative ring-2 ring-purple-500/50"
+                loading="eager"
+                decoding="async"
+                className="w-48 md:w-60 h-48 md:h-60 rounded-full relative ring-2 ring-purple-500/50"
                 style={{ objectFit: "cover" }}
               />
             </div>
           </motion.div>
+
         </motion.div>
 
         <MotionWrapper>
-          <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-sm backdrop-filter p-4 rounded-lg border border-purple-500/20 dark:border-purple-500/10 shadow-sm">
-            <p className="text-muted-foreground pl-4 py-2 mb-4 relative">
-              <span className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></span>
-              {personalInfo.heroDescription}
-            </p>
+          <div className="bg-linear-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-sm backdrop-filter p-4 rounded-lg border border-purple-500/20 dark:border-purple-500/10 shadow-sm">
+            <div className="relative pl-6 py-1">
+              <span
+                className="absolute left-0 top-0 h-full w-1 bg-linear-to-b from-purple-500 to-pink-500 rounded-full"
+                aria-hidden="true"
+              />
+              <div className="flex flex-col gap-4 text-muted-foreground leading-relaxed">
+                {personalInfo.heroDescription.map((paragraph, i) => (
+                  <p key={i}>
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </div>
           </div>
         </MotionWrapper>
       </div>

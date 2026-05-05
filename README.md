@@ -1,8 +1,15 @@
+## License Notice & Attribution
+
+This project is a personalized version of a core template. To respect both the original creator and my own work, it is governed by a dual-license structure:
+
+- **Core Framework:** Licensed under the [MIT License](LICENSE) by [Rishikesh S](https://github.com/rishikesh2003/my-portfolio).
+- **Personal Content & Modifications:** All custom UI adjustments, project descriptions, and personal branding are protected under a [Non-Commercial License](LICENSE-CONTENT).
+
+
 # Modern Portfolio Template
 
-A sleek, responsive portfolio website built with **Astro**, **React**, and **Tailwind CSS**, featuring modern animations and stunning glassmorphism effects.
 
-![Portfolio Screenshot](https://github.com/user-attachments/assets/4f2466f1-1ebe-4cbe-857c-40eccd63c384)
+A sleek, responsive portfolio website built with **Astro**, **React**, and **Tailwind CSS**, featuring modern animations and stunning glassmorphism effects.
 
 ## ✨ Features
 
