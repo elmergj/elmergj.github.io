@@ -6,7 +6,7 @@ export default function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="py-12 relative"
+      className="py-12 relative scroll-mt-20"
     >
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
         <MotionWrapper>
