@@ -1,5 +1,6 @@
 import React from "react";
 import { skills } from "@/lib/data";
+import { useLanguage, translations } from "@/lib/i18n";
 import { motion } from "framer-motion";
 import MotionWrapper from "./MotionWrapper";
 import { GlassCard } from "./ui/glass-card";
@@ -46,6 +47,8 @@ const skillCategoryVariants = {
 };
 
 export default function SkillsSection() {
+  const { language } = useLanguage();
+
   return (
     <section
       id="skills"
@@ -55,7 +58,7 @@ export default function SkillsSection() {
         <MotionWrapper>
           <h2 className="text-2xl font-bold mb-8 text-center md:text-left">
             <span>&#128736;&#65039;&nbsp;</span>
-            Skills
+            {translations[language].sections.skills}
           </h2>
         </MotionWrapper>
 
@@ -70,7 +73,7 @@ export default function SkillsSection() {
             <GlassCard className="p-4">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
                 <span className="mr-2 text-xl">&#128187;&nbsp;</span>
-                Programming Languages
+                {translations[language].skills.programmingLanguages}
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {skills.programmingLanguages.map((skill, index) => (
@@ -84,7 +87,7 @@ export default function SkillsSection() {
             <GlassCard className="p-4">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
                 <span className="mr-2 text-xl">&#127912;&nbsp;</span>
-                Frontend Development
+                {translations[language].skills.frontendDevelopment}
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {skills.frontendDevelopment.map((skill, index) => (
@@ -98,7 +101,7 @@ export default function SkillsSection() {
             <GlassCard className="p-4">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
                 <span className="mr-2 text-xl">&#9881;&#65039;&nbsp;</span>
-                Backend Development
+                {translations[language].skills.backendDevelopment}
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {skills.backendDevelopment.map((skill, index) => (
@@ -112,7 +115,7 @@ export default function SkillsSection() {
             <GlassCard className="p-4">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
                 <span className="mr-2 text-xl">&#128452;&#65039;&nbsp;</span>
-                Database & Storage
+                {translations[language].skills.databaseAndStorage}
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {skills.databaseAndStorage.map((skill, index) => (
@@ -126,7 +129,7 @@ export default function SkillsSection() {
             <GlassCard className="p-4">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
                 <span className="mr-2 text-xl">&#9729;&#65039;&nbsp;</span>
-                Cloud & DevOps
+                {translations[language].skills.cloudAndDevOps}
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {skills.cloudAndDevOps.map((skill, index) => (
@@ -140,7 +143,7 @@ export default function SkillsSection() {
             <GlassCard className="p-4">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
                 <span className="mr-2 text-xl">&#129520;&nbsp;</span>
-                Tools & Services
+                {translations[language].skills.toolsAndServices}
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {skills.toolsAndServices.map((skill, index) => (

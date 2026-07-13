@@ -6,12 +6,15 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import { Github } from "lucide-react";
+import { Github, Globe, FileText } from "lucide-react";
 import { GlassCard } from "./ui/glass-card";
 import MotionWrapper from "./MotionWrapper";
 import { motion } from "framer-motion";
+import { useLanguage, translations } from "@/lib/i18n";
 
 export default function ProjectsSection() {
+  const { language } = useLanguage();
+
   return (
     <section
       id="projects"
@@ -29,7 +32,7 @@ export default function ProjectsSection() {
             >
             </motion.span>{" "}
             <span>&#128640;&nbsp;</span>
-            Projects
+            {translations[language].sections.projects}
           </h2>
         </MotionWrapper>
 
@@ -58,18 +61,43 @@ export default function ProjectsSection() {
                     ))}
                   </ul>
                 </CardContent>
-                <CardFooter className="flex justify-center md:justify-start items-center border-t border-border/30 bg-linear-to-r from-purple-500/5 to-pink-500/5">
+                <CardFooter className="flex flex-col items-start gap-3 border-t border-border/30 bg-linear-to-r from-purple-500/5 to-pink-500/5 pt-8">
+                  {project.website && (
+                    <motion.a
+                      href={project.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-purple-500 transition-colors"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Globe className="h-4 w-4" />
+                      {translations[language].projects.viewSite}
+                    </motion.a>
+                  )}
+                  {project.documentation && (
+                    <motion.a
+                      href={project.documentation}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-purple-500 transition-colors"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <FileText className="h-4 w-4" />
+                      {translations[language].projects.viewDocumentation}
+                    </motion.a>
+                  )}
                   <motion.a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-sm text-muted-foreground hover:text-purple-500 transition-colors group/link pt-8"
+                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-purple-500 transition-colors"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Github className="h-4 w-4 mr-2 group-hover/link:rotate-12 transition-transform duration-300" />
-                    View on GitHub
-                    <span>&nbsp;&#128279;</span>
+                    <Github className="h-4 w-4" />
+                    {translations[language].projects.viewOnGitHub}
                   </motion.a>
                 </CardFooter>
               </GlassCard>

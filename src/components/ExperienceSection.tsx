@@ -1,8 +1,11 @@
 import { workExperience } from "@/lib/data";
+import { useLanguage, translations } from "@/lib/i18n";
 import TimelineItem from "./TimelineItem";
 import MotionWrapper from "./MotionWrapper";
 
 export default function ExperienceSection() {
+  const { language } = useLanguage();
+
   return (
     <section
       id="experience"
@@ -12,7 +15,7 @@ export default function ExperienceSection() {
         <MotionWrapper>
           <h2 className="text-2xl font-bold mb-8 text-center md:text-left">
             <span>&#128188;&nbsp;</span>
-            Work Experience
+            {translations[language].sections.experience}
           </h2>
         </MotionWrapper>
         <div className="mb-8">

@@ -5,7 +5,7 @@
     "description": "Personal technical portfolio focused on backend development and software architecture, built with Astro and Tailwind CSS.",
     "author": "Elmer Gonzalez",
     "license": "MIT",
-    "packageManager": "pnpm@9.1.0",
+    "packageManager": "pnpm@11.1.1",
     "repository": {
         "type": "git",
         "url": "https://github.com/elmergj/elmergj.github.io"

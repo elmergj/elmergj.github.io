@@ -1,11 +1,18 @@
+import LanguageToggle from "./ui/language-toggle";
 import ThemeToggle from "./ui/theme-toggle";
 import { personalInfo } from "@/lib/data";
+import { useLanguage, translations } from "@/lib/i18n";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const navItems = ["projects", "skills", "experience", "education"] as const;
+
+type NavItem = (typeof navItems)[number];
+
 export default function GlassHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language } = useLanguage();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -23,28 +30,27 @@ export default function GlassHeader() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-          {["projects", "skills", "experience", "education"].map(
-            (item, index) => (
-              <motion.a
-                key={item}
-                href={`#${item}`}
-                className="transition-colors hover:text-foreground/80 text-foreground/60"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.2, delay: index * 0.1 }}
-                whileHover={{ y: -2 }}
-              >
-                {item === "projects" && "🚀 "}
-                {item === "skills" && "🛠️ "}
-                {item === "experience" && "💼 "}
-                {item === "education" && "🎓 "}
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-              </motion.a>
-            )
-          )}
+          {navItems.map((item, index) => (
+            <motion.a
+              key={item}
+              href={`#${item}`}
+              className="transition-colors hover:text-foreground/80 text-foreground/60"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2, delay: index * 0.1 }}
+              whileHover={{ y: -2 }}
+            >
+              {item === "projects" && "🚀 "}
+              {item === "skills" && "🛠️ "}
+              {item === "experience" && "💼 "}
+              {item === "education" && "🎓 "}
+              {translations[language].nav[item as NavItem]}
+            </motion.a>
+          ))}
         </nav>
 
         <div className="flex items-center space-x-2">
+          <LanguageToggle />
           <ThemeToggle />
 
           {/* Mobile Menu Button */}
@@ -70,15 +76,14 @@ export default function GlassHeader() {
             transition={{ duration: 0.3 }}
           >
             <nav className="flex flex-col space-y-4 text-sm font-medium">
-              {["projects", "skills", "experience", "education"].map(
-                (item, index) => (
+              {navItems.map((item, index) => (
                   <motion.a
                     key={item}
                     onClick={() => {
                       setIsMenuOpen(false);
                       setTimeout(() => {
                         window.location.hash = `#${item}`;
-                      }, 300);
+                      }, 200);
                     }}
                     className="transition-colors hover:text-foreground/80 text-foreground/60 py-2"
                     initial={{ opacity: 0, x: -20 }}
@@ -89,10 +94,9 @@ export default function GlassHeader() {
                     {item === "skills" && "🛠️ "}
                     {item === "experience" && "💼 "}
                     {item === "education" && "🎓 "}
-                    {item.charAt(0).toUpperCase() + item.slice(1)}
+                    {translations[language].nav[item as NavItem]}
                   </motion.a>
-                )
-              )}
+                ))}
             </nav>
           </motion.div>
         )}

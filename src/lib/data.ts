@@ -18,6 +18,8 @@ export const projects = [
   {
     title: "Movish",
     github: "https://github.com/elmergj/Movish",
+    website: "https://github.com/elmergj/Movish",
+    documentation: "https://github.com/elmergj/Movish#readme",
     description: [
       "Movish is the core of my personal project for tracking movies and TV shows",
       "It contains the business logic, security controls, integration features, and everything else needed for this platform to be used by mobile and web users.",
@@ -26,6 +28,8 @@ export const projects = [
   {
     title: "Movish - Android Client",
     github: "https://github.com/elmergj/Movish-app",
+    website: "https://github.com/elmergj/Movish-app",
+    documentation: "https://github.com/elmergj/Movish-app#readme",
     description: [
       "My first mobile client for Movish. This project is an Android client that provides a simple and user-friendly interface for using the platform.",
       "Developed using best practices from the Android SDK and Jetpack Compose."

@@ -120,4 +120,42 @@
   html {
     scroll-behavior: smooth;
   }
+
+  #content-wrapper {
+    overflow-x: hidden;
+  }
+
+  #content-wrapper.language-refreshed-from-right,
+  #content-wrapper.language-refreshed-from-right section,
+  #content-wrapper.language-refreshed-from-right .glass-card {
+    animation: language-refresh-right 0.42s ease-out both;
+  }
+
+  #content-wrapper.language-refreshed-from-left,
+  #content-wrapper.language-refreshed-from-left section,
+  #content-wrapper.language-refreshed-from-left .glass-card {
+    animation: language-refresh-left 0.42s ease-out both;
+  }
+
+  @keyframes language-refresh-right {
+    0% {
+      opacity: 0.88;
+      transform: translateX(18px) scale(0.995);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  @keyframes language-refresh-left {
+    0% {
+      opacity: 0.88;
+      transform: translateX(-18px) scale(0.995);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
 }

@@ -1,7 +1,10 @@
 import { personalInfo } from "@/lib/data";
+import { useLanguage, translations } from "@/lib/i18n";
 import { motion } from "framer-motion";
 
 export default function Footer() {
+  const { language } = useLanguage();
+
   return (
     <footer className="border-t border-purple-500/10 bg-linear-to-b from-background to-muted/20 backdrop-blur-sm">
       {/* SECCIÓN 1: TU FOOTER PRINCIPAL */}
@@ -17,7 +20,7 @@ export default function Footer() {
             className="text-sm text-muted-foreground text-center md:text-left"
             whileHover={{ scale: 1.01 }}
           >
-            &copy; {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
+            © {new Date().getFullYear()} {personalInfo.name}. {translations[language].footer.copyRight}
           </motion.p>
 
           <motion.p
@@ -63,14 +66,14 @@ export default function Footer() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            This site was generated using a template from{" "}
+            {translations[language].footer.source}{" "}
             <motion.a
               href={"https://github.com/rishikesh2003/my-portfolio"}
               target="_blank"
               rel="noopener noreferrer"
               className="text-white underline underline-offset-4 hover:text-purple-500/70 transition-colors"
             >
-              Rishikesh S.'s repository
+              {translations[language].footer.repository}
             </motion.a>
             .
           </motion.p>

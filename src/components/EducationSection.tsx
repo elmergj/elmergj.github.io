@@ -1,8 +1,11 @@
 import { education } from "@/lib/data";
+import { useLanguage, translations } from "@/lib/i18n";
 import TimelineItem from "./TimelineItem";
 import MotionWrapper from "./MotionWrapper";
 
 export default function EducationSection() {
+  const { language } = useLanguage();
+
   return (
     <section
       id="education"
@@ -11,7 +14,7 @@ export default function EducationSection() {
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
         <MotionWrapper>
           <h2 className="text-2xl font-bold mb-8 text-center md:text-left">
-            🎓 Education
+            🎓 {translations[language].sections.education}
           </h2>
         </MotionWrapper>
 
