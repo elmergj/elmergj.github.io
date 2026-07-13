@@ -27,9 +27,6 @@ jobs:
           node-version: 24
           cache: 'pnpm'
 
-      - name: Approve pnpm build scripts
-        run: pnpm approve-builds --all
-
       - name: Install dependencies
         run: pnpm install
 
