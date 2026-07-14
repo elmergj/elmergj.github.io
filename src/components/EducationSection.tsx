@@ -1,10 +1,10 @@
-import { education } from "@/lib/data";
-import { useLanguage, translations } from "@/lib/i18n";
+import { useLanguage, translations, localizedContent } from "@/lib/i18n";
 import TimelineItem from "./TimelineItem";
 import MotionWrapper from "./MotionWrapper";
 
 export default function EducationSection() {
   const { language } = useLanguage();
+  const { education } = localizedContent[language];
 
   return (
     <section

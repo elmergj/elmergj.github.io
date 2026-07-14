@@ -1,9 +1,11 @@
 import { personalInfo } from "@/lib/data";
+import { useLanguage, translations } from "@/lib/i18n";
 import { Mail, Github, MapPin, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 import MotionWrapper from "./MotionWrapper";
 
 export default function HeroSection() {
+  const { language } = useLanguage();
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -49,7 +51,7 @@ const childVariants = {
               className="text-xl text-muted-foreground mb-6"
               variants={childVariants}
             >
-              Computer Systems
+              {translations[language].hero.title}
             </motion.p>
 
             <motion.div
@@ -62,7 +64,7 @@ const childVariants = {
                 whileHover={{ scale: 1.05, color: "#4b5563" }}
               >
                 <MapPin className="h-4 w-4 mr-2" />
-                {personalInfo.location}
+                {translations[language].hero.location}
                 <span>&nbsp;&#128205;</span>
               </motion.div>
 
@@ -134,7 +136,7 @@ const childVariants = {
                 aria-hidden="true"
               />
               <div className="flex flex-col gap-4 text-muted-foreground leading-relaxed">
-                {personalInfo.heroDescription.map((paragraph, i) => (
+                {translations[language].hero.description.map((paragraph, i) => (
                   <p key={i}>
                     {paragraph}
                   </p>

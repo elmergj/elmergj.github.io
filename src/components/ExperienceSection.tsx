@@ -1,10 +1,10 @@
-import { workExperience } from "@/lib/data";
-import { useLanguage, translations } from "@/lib/i18n";
+import { useLanguage, translations, localizedContent } from "@/lib/i18n";
 import TimelineItem from "./TimelineItem";
 import MotionWrapper from "./MotionWrapper";
 
 export default function ExperienceSection() {
   const { language } = useLanguage();
+  const { workExperience } = localizedContent[language];
 
   return (
     <section

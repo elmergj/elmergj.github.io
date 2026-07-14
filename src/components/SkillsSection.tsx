@@ -1,6 +1,5 @@
 import React from "react";
-import { skills } from "@/lib/data";
-import { useLanguage, translations } from "@/lib/i18n";
+import { useLanguage, translations, localizedContent } from "@/lib/i18n";
 import { motion } from "framer-motion";
 import MotionWrapper from "./MotionWrapper";
 import { GlassCard } from "./ui/glass-card";
@@ -48,6 +47,7 @@ const skillCategoryVariants = {
 
 export default function SkillsSection() {
   const { language } = useLanguage();
+  const { skills } = localizedContent[language];
 
   return (
     <section

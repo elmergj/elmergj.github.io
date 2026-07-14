@@ -1,5 +1,4 @@
 import React from "react";
-import { projects } from "@/lib/data";
 import {
   CardContent,
   CardFooter,
@@ -10,10 +9,11 @@ import { Github, Globe, FileText } from "lucide-react";
 import { GlassCard } from "./ui/glass-card";
 import MotionWrapper from "./MotionWrapper";
 import { motion } from "framer-motion";
-import { useLanguage, translations } from "@/lib/i18n";
+import { useLanguage, translations, localizedContent } from "@/lib/i18n";
 
 export default function ProjectsSection() {
   const { language } = useLanguage();
+  const { projects } = localizedContent[language];
 
   return (
     <section
