@@ -1,12 +1,11 @@
 # Changelog
 
-Todas las modificaciones importantes de este proyecto se documentan en este archivo.
+All major changes to this project are documented in this file.
 
 ## [1.1.3] - 2026-07-13
-- Agrega soporte de localización en español para la interfaz y los datos.
-- Traduce secciones de proyectos, educación, experiencia y habilidades.
-- Traduce el título del hero a `Sistemas Computacionales` y la ubicación a `Panama, Ciudad de Panama`.
-- Mantiene `personalInfo` independiente del idioma y centraliza los textos localizados en `src/lib/i18n.ts`.
+- Adds Spanish localization support for the interface and data.
+- Translates the “Projects,” “Education,” “Experience,” and “Skills” sections.
+- Keeps `personalInfo` language-independent and centralizes localized texts in `src/lib/i18n.ts`.
 
 ## [1.1.2] - 2026-05-05 01:06
 - fix: adding package manager version and project details on package.json
