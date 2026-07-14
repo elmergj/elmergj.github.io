@@ -34,10 +34,10 @@
         "tailwindcss": "^4.0.14",
         "tw-animate-css": "^1.2.4"
     },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "sharp"
+    "pnpm": {
+        "onlyBuiltDependencies": [
+        "esbuild",
+        "sharp"
     ]
   }
 }
